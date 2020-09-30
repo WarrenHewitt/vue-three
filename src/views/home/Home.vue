@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <div>
+        平级1
+    </div>
+    <div>
+        平级1
+    </div>
+    <div>
+        {{ count }}
+    </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+
+// Define the component in class-style 130130
 
 @Options({
     components: {
-        HelloWorld
     }
 })
-export default class Home extends Vue {}
+
+export default class Test extends Vue {
+    // Class properties will be component data
+    count = 0
+
+    // Methods will be component methods
+    increment () {
+        this.count++
+    }
+
+    decrement () {
+        this.count--
+    }
+}
 </script>
+
+<style scoped>
+
+</style>
